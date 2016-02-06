@@ -7,3 +7,4 @@ class ResourcesController < ApplicationController
     @datas = @cls.all.order(:id => :desc).first(size)
   end
 end
+
