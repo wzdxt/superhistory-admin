@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  establish_connection :main
+  establish_connection :user
 end

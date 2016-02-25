@@ -1,3 +1,3 @@
 class Visit < ActiveRecord::Base
-  establish_connection :main
+  establish_connection :visit
 end
