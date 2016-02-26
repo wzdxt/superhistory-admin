@@ -38,6 +38,10 @@ content:
   <<: *default
   adapter: sqlite3
   database: ../superhistory-content/db/sqlite/superhistory_development
+visithistory:
+  <<: *default
+  adapter: sqlite3
+  database: ../superhistory-visithistory/db/sqlite/superhistory_development
 dist_session:
   <<: *default
   adapter: sqlite3
