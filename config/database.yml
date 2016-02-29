@@ -10,7 +10,7 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: sqlite3
   encoding: utf8mb4
   collation: utf8mb4_ci
   pool: 5
@@ -20,32 +20,28 @@ default: &default
 
 development:
   <<: *default
-  adapter: sqlite3
   database: db/sqlite/superhistory_development
 visit:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-visit/db/sqlite/superhistory_development
 user:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-auth/db/sqlite/superhistory_development
 page:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-page/db/sqlite/superhistory_development
 content:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-content/db/sqlite/superhistory_development
 visithistory:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-visithistory/db/sqlite/superhistory_development
 dist_session:
   <<: *default
-  adapter: sqlite3
   database: ../superhistory-auth/db/sqlite/superhistory_development
+rule:
+  <<: *default
+  database: ../superhistory-rule/db/sqlite/superhistory_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -76,6 +72,7 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
   database: superhistory-scrach_production
   username: superhistory-scrach
   password: <%= ENV['SUPERHISTORY-SCRACH_DATABASE_PASSWORD'] %>
